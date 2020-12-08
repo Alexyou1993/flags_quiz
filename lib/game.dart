@@ -152,7 +152,7 @@ class _GamePageState extends State<GamePage> {
             max: 60.0,
             onChanged: (double value) => setState(() => indexT = value),
           ),
-          if (flag != null) Image.network(flag),
+          Image.network(flag),
           FlatButton(
             child: Text(
               listAns[ans1],
