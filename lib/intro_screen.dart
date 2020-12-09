@@ -6,8 +6,7 @@ class IntroScreen extends StatefulWidget {
   _IntroScreenState createState() => _IntroScreenState();
 }
 
-class _IntroScreenState extends State<IntroScreen>
-    with SingleTickerProviderStateMixin {
+class _IntroScreenState extends State<IntroScreen> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -35,10 +34,8 @@ class _IntroScreenState extends State<IntroScreen>
               Expanded(
                 flex: 2,
                 child: Container(
-                  decoration: BoxDecoration(
-                      border: Border.all(width: 16.0),
-                      shape: BoxShape.rectangle,
-                      color: Colors.white),
+                  decoration:
+                      BoxDecoration(border: Border.all(width: 16.0), shape: BoxShape.rectangle, color: Colors.white),
                   child: Image.asset(
                     './assets/images/flags.png',
                     fit: BoxFit.scaleDown,
@@ -63,13 +60,11 @@ class _IntroScreenState extends State<IntroScreen>
                 onTap: () {
                   Navigator.push<GamePage>(
                     context,
-                    MaterialPageRoute<GamePage>(
-                        builder: (BuildContext context) => const GamePage()),
+                    MaterialPageRoute<GamePage>(builder: (BuildContext context) => const GamePage()),
                   );
                 },
                 child: Padding(
-                  padding:
-                      const EdgeInsets.only(left: 40, right: 40, bottom: 60),
+                  padding: const EdgeInsets.only(left: 40, right: 40, bottom: 60),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(20),
                     child: Container(

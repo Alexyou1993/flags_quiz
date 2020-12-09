@@ -32,14 +32,7 @@ class _GamePageState extends State<GamePage> {
   String flag, correctAns, randomAns, randomAns1, randomAns2;
   double indexT = 1.0;
   Timer timer;
-  int ans1,
-      ans2,
-      ans3,
-      ans4,
-      point = 0,
-      incorrectAns = 0,
-      countAns = -1,
-      random;
+  int ans1, ans2, ans3, ans4, point = 0, incorrectAns = 0, countAns = -1, random;
 
   @override
   void initState() {
@@ -75,18 +68,13 @@ class _GamePageState extends State<GamePage> {
   Future<void> _getFlags() async {
     setState(() => isLoading = true);
 
-    final Response response = await get(
-        'https://www.worldometers.info/geography/flags-of-the-world/');
-    final List<String> flags = response.body
-        .split('<div align="center" style="margin-top:10px "><a href="')
-        .skip(1)
-        .toList();
+    final Response response = await get('https://www.worldometers.info/geography/flags-of-the-world/');
+    final List<String> flags =
+        response.body.split('<div align="center" style="margin-top:10px "><a href="').skip(1).toList();
 
     for (final String item in flags) {
-      countriesName.add(
-          item.split('padding-top:10px">')[1].split('</div></div></div>')[0]);
-      listOfFlags
-          .add('https://www.worldometers.info${item.split('.gif')[0]}.gif');
+      countriesName.add(item.split('padding-top:10px">')[1].split('</div></div></div>')[0]);
+      listOfFlags.add('https://www.worldometers.info${item.split('.gif')[0]}.gif');
     }
     _setValuesRandom();
     setState(() => isLoading = false);

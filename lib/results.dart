@@ -62,8 +62,7 @@ class ResultsPage extends StatelessWidget {
                   onPressed: () {
                     Navigator.push<GamePage>(
                       context,
-                      MaterialPageRoute<GamePage>(
-                          builder: (BuildContext context) => const GamePage()),
+                      MaterialPageRoute<GamePage>(builder: (BuildContext context) => const GamePage()),
                     );
                   },
                   child: const Text(
