@@ -16,7 +16,7 @@ class _IntroScreenState extends State<IntroScreen> with SingleTickerProviderStat
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+            children: <Widget>[
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.only(top: 80.0),
