@@ -141,61 +141,33 @@ class _GamePageState extends State<GamePage> {
             onChanged: (double value) => setState(() => indexT = value),
           ),
           Image.network(flag),
-          FlatButton(
-            child: Text(
-              listAns[ans1],
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ListView.builder(
+              shrinkWrap: true,
+              itemBuilder: (BuildContext context, int index) {
+                return Container(
+                  margin: const EdgeInsets.all(8),
+                  child: Column(children: <Widget>[
+                    FlatButton(
+                      child: Text(
+                        listAns[index],
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      onPressed: () {
+                        _points(listAns[index]);
+                        _setValuesRandom();
+                      },
+                    ),
+                  ]),
+                );
+              },
+              itemCount: listAns == null ? 0 : listAns.length,
             ),
-            onPressed: () {
-              _points(listAns[ans1]);
-              _setValuesRandom();
-            },
-          ),
-          FlatButton(
-            child: Text(
-              listAns[ans2],
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            onPressed: () {
-              _points(listAns[ans2]);
-              _setValuesRandom();
-            },
-          ),
-          FlatButton(
-            child: Text(
-              listAns[ans3],
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            onPressed: () {
-              _points(listAns[ans3]);
-              _setValuesRandom();
-            },
-          ),
-          FlatButton(
-            child: Text(
-              listAns[ans4],
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            onPressed: () {
-              _points(listAns[ans4]);
-              _setValuesRandom();
-            },
           ),
         ],
       ),
