@@ -6,7 +6,7 @@ class IntroScreen extends StatefulWidget {
   _IntroScreenState createState() => _IntroScreenState();
 }
 
-class _IntroScreenState extends State<IntroScreen> with SingleTickerProviderStateMixin {
+class _IntroScreenState extends State<IntroScreen> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
